@@ -1,3 +1,4 @@
 pyvenv.cfg
-./Lib
+Lib
 Include
+Scripts
