@@ -1,0 +1,20 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: 
+  schedule:
+  - cron: "0 0 * * *"
+
+jobs:
+  build:
+    name: Example
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Test with environment variables
+        run: echo Date $TAG_NAME 
+        env:
+          TAG_NAME: ${{ steps.date.outputs.date }}
+      
+
